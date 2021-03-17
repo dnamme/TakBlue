@@ -17,6 +17,7 @@
 4. Initialize environment
     - Mac/Linux: `python3 -m virtualenv env`
     - Windows: `virtualenv env`
+    **NOTE:** It is important that the name of the environment is `env` since that directory is already added in the .gitignore file. Changing the name will lead to complications, unless if you manually edit .gitignore.
 5. Activate environment
     - Mac/Linux: `./env/bin/activate`
     - Windows: `./env/Scripts/activate`
