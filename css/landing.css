@@ -9,10 +9,17 @@ body {
     background-size: cover;
 }
 
-#container {
+#container-tint {
     background-color: #1c38c4a0;
 
-    padding: 224px 120px 0 120px;
+    padding: 0 120px 0 120px;
+    margin: 0 auto;
+
+    height: 100vh;
+}
+
+#container-text {
+    padding-top: 224px;
 }
 
 #title {
