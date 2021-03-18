@@ -37,3 +37,13 @@ body {
     font-family: sans-serif;
     font-size: 36px;
 }
+
+@media screen and (max-width: 800px) {
+    #title {
+        font-size: 72px;
+    }
+
+    #details {
+        font-size: 24px;
+    }
+}
