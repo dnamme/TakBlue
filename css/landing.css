@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./../images/admu-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 224px 120px 0 120px;
+}
+
+#background-tint {
+    background-color: #1c38c4;
+
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    margin: 0;
+
+    color: white;
+    font-size: 144px;
+}
+
+#details {
+    margin: 0;
+
+    color: white;
+    font-size: 36px;
+}
