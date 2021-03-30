@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <nav class="sticky">
+      <div class="nav-content">
+        <p><b>TakBlue</b></p>
+        <div class="nav-right">
+          <p><span onclick="transitionToPage('about.html')">About</span></p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main">
+
+      <div class="input-results">
+        <div class="tab">
+          <button class="tablinks active" onclick="openMethod(event, 'copy-input')">Copy-Paste</button>
+          <button class="tablinks" onclick="openMethod(event, 'manual-input')">Manual</button>
+        </div>
+        <div class="input-container">
+          <div class="tabcontent" id="copy-input">
+            <p>Head to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to do Head to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
+              lowkey this ugly idk what to do</p>
+          </div>
+          <div class="tabcontent" id="manual-input">
+            <p>Type your schedule in the following format: <b>DAY || TIME || CLASS CODE || CLASS LOCATION</b></p>
+          </div>
+        </div>
+
+        <div class="results-container">
+          
+          <p class="small-grey-text">Monday</p>
+          <div class="results-content">
+
+            <div class="result-details">
+              <div class="top-bottom">
+              <p>8:00AM</p>
+              <div class="circle"></div>
+              <div class="location">
+                <p>Class Code</p>
+                <p class="small-grey-text">Class Location</p>
+              </div>
+            </div>
+              <div class="middle">
+                <div class="leftofline">
+                  <p style="color: #1C38B4">5 minute walk</p>
+                  <p class="small-grey-text">0.98km</p>
+                </div>
+                  <div class="vertical-line"></div>
+              </div>
+              <div class="top-bottom">
+              <p>8:00AM</p>
+              <div class="circle"></div>
+              <div class="location">
+                <p>Class Code</p>
+                <p class="small-grey-text">Class Location</p>
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="map">
+      </div>
+
+    </div>
+
+    <script>
+      function openMethod(evt, method) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(method).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    
+// https://www.w3schools.com/howto/howto_js_tabs.asp
+// https://stackoverflow.com/questions/51906907/how-to-set-an-active-css-tab-menu
+    
+    </script>
+  </body>
+</html>
