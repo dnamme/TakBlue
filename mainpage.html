@@ -4,7 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./scripts/main.js"></script>
     <title></title>
   </head>
 
@@ -26,13 +29,7 @@
         </div>
         <div class="input-container">
           <div class="tabcontent" id="copy-input">
-            <p>Head to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to do Head to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to doHead to MY CLASS SCHEDULE on your AISIS account and copy paste the entire damn thing ok
-              lowkey this ugly idk what to do</p>
+            <textarea class="tabcontent" id="input-copy" rows="5" cols="20"></textarea>
           </div>
           <div class="tabcontent" id="manual-input">
             <p>Type your schedule in the following format: <b>DAY || TIME || CLASS CODE || CLASS LOCATION</b></p>
@@ -79,33 +76,5 @@
       </div>
 
     </div>
-
-    <script>
-      function openMethod(evt, method) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(method).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    
-    
-    // https://www.w3schools.com/howto/howto_js_tabs.asp
-    // https://stackoverflow.com/questions/51906907/how-to-set-an-active-css-tab-menu
-    
-    </script>
   </body>
 </html>
