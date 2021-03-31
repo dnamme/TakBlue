@@ -111,7 +111,6 @@ function sortByDays(array) {
             `;
         }
     }
-
     document.getElementById('results').innerHTML = htmlString;
 }
 
