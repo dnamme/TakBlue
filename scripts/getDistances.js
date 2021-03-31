@@ -111,6 +111,7 @@ function sortByDays(array) {
             `;
         }
     }
+    document.getElementById('results').innerHTML = htmlString;
 }
 
 function distances(building1, building2) { 

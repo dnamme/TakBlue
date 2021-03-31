@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/results.css">
 
     <script src="./scripts/main.js"></script>
     <title></title>
@@ -21,58 +22,65 @@
       </div>
     </nav>
 
-    <div class="main">
-      <div class="input-results">
-        <div class="tab">
-          <button class="tablinks active" onclick="openMethod(event, 'copy-input')">Copy-Paste</button>
-          <button class="tablinks" onclick="openMethod(event, 'manual-input')">Manual</button>
-        </div>
-        <div class="input-container">
-          <div class="tabcontent" id="copy-input">
-            <textarea id="input-copy" rows="5" cols="20"></textarea>
-          </div>
-          <div class="tabcontent" id="manual-input">
-            <p>Type your schedule in the following format: <b>DAY || TIME || CLASS CODE || CLASS LOCATION</b></p>
-          </div>
-        </div>
 
-        <div class="results-container">
-          
-          <p class="small-grey-text">Monday</p>
+
+
+    <div class="main">
+        <div class="input-results">
+          <div class="tab">
+            <button class="tablinks active" onclick="openMethod(event, 'copy-input')">Copy-Paste</button>
+            <button class="tablinks" onclick="openMethod(event, 'manual-input')">Manual</button>
+          </div>
+          <div class="input-container">
+            <div class="tabcontent" id="copy-input">
+              <textarea id="input-copy" rows="5" cols="20"></textarea>
+            </div>
+            <div class="tabcontent" id="manual-input">
+              <p>Type your schedule in the following format: <b>DAY || TIME || CLASS CODE || CLASS LOCATION</b></p>
+            </div>
+          </div>
+        </div><div class="results-container">
+          <div class="results-day-tabs">
+            <p class="small-grey-text">Monday</p>
+            <p class="small-grey-text">Tuesday</p>
+            <p class="small-grey-text">Wednesday</p>
+            <p class="small-grey-text">Thursday</p>
+            <p class="small-grey-text">Friday</p>
+            <p class="small-grey-text">Saturday</p>
+          </div>
+
           <div class="results-content">
 
-            <div class="result-details">
-              <div class="top-bottom">
-              <p>8:00AM</p>
-              <div class="circle"></div>
-              <div class="location">
-                <p>Class Code</p>
-                <p class="small-grey-text">Class Location</p>
-              </div>
+            <div class="results-details-left">
+              <p class="result-text-time">5 minute walk</p>
+              <p class="result-text-distance">0.98km</p>
+
+              <p class="result-text-time">5 minute walk</p>
+              <p class="result-text-distance">0.98km</p>
             </div>
-              <div class="middle">
-                <div class="leftofline">
-                  <p style="color: #1C38B4">5 minute walk</p>
-                  <p class="small-grey-text">0.98km</p>
-                </div>
-                  <div class="vertical-line"></div>
-              </div>
-              <div class="top-bottom">
-              <p>8:00AM</p>
+
+            <div class="results-details-mid">
               <div class="circle"></div>
-              <div class="location">
-                <p>Class Code</p>
-                <p class="small-grey-text">Class Location</p>
-              </div>
-              </div>
+              <div class="vertical-line"></div>
+              <div class="circle"></div>
+              <div class="vertical-line"></div>
+              <div class="circle"></div>
+            </div>
+
+            <div class="results-details-right">
+              <p class="result-text-code">Class Code</p>
+              <p class="result-text-location">Location</p>
+
+              <p class="result-text-code">Class Code</p>
+              <p class="result-text-location">Location</p>
+
+              <p class="result-text-code">Class Code</p>
+              <p class="result-text-location">Location</p>
             </div>
 
           </div>
 
         </div>
-      </div>
-
-      <div class="map">
       </div>
 
     </div>
