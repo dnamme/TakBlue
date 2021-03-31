@@ -12,6 +12,7 @@ body {
 /*main body of website*/
 .main {
   display: flex;
+  flex-direction: row;
   width: 90%;
   max-width: 1200px;
   height: 80vh;
