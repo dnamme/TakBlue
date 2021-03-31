@@ -20,11 +20,14 @@ body {
 }
 
 .input-results {
-  width: 45%;
-  max-width: 320px;
+  width: 40%;
+  height: 100%;
+  /* max-width: 320px; */
   margin-right: 5%;
   background: #F3F3F3;
   border-radius: 16px;
+
+  display: inline-block;
 }
 
 .input-results p{
@@ -101,7 +104,7 @@ http://www.css3.info/preview/box-shadow/ */
   color: #1C38B4;
 }
 
-.tabcontent{
+.tabcontent {
   height: 30vh;
   padding: 16px;
   background: #E9E9E9;
@@ -118,6 +121,8 @@ http://www.css3.info/preview/box-shadow/ */
   background: #fff;
   border-radius: 16px;
   height: 25vh;
+
+  display: inline-block;
 }
 
 .results-content {
