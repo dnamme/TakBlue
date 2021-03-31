@@ -61,7 +61,7 @@ function fetchManualData() {
 
 function sortByDays(array) { 
     const daysOfWeek = ["M", "T", "W", "TH", "F", "SAT"];
-    var htmlString = "";
+    var masterArray = [];
 
     for (var day of daysOfWeek) { 
         var arrayByDay = array.filter(function(element) { 
@@ -72,47 +72,10 @@ function sortByDays(array) {
             arrayByDay[i]["distance"] = distances(arrayByDay[i].location, arrayByDay[i + 1].location);
         }
         arrayByDay.unshift(day);
-        console.log(arrayByDay);
-
-        htmlString += "<p class='small-grey-text'> " + day + " </p>";
-
-        for (var i = 1; i < arrayByDay.length - 1; i++) {
-            var item = arrayByDay[i]
-            var succeedingSubject = arrayByDay[i + 1];
-
-            htmlString += `
-            <div class="results-content">
-
-            <div class="result-details">
-                <div class="top-bottom">
-                <p>${item.time[0]}</p>
-                <div class="circle"></div>
-                <div class="location">
-                <p>${item.subjectCode}</p>
-                <p class="small-grey-text">${item.location}</p>
-                </div>
-            </div>
-                <div class="middle">
-                <div class="leftofline">
-                    <p style="color: #1C38B4">${item.distance / 90} minute walk</p>
-                    <p class="small-grey-text">${item.distance} m</p>
-                </div>
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="top-bottom">
-                <p>${succeedingSubject.time[0]}</p>
-                <div class="circle"></div>
-                <div class="location">
-                <p>${succeedingSubject.subjectCode}</p>
-                <p class="small-grey-text">${succeedingSubject.location}</p>
-                </div>
-                </div>
-            </div>
-            `;
-        }
+        masterArray.push(arrayByDay);
     }
 
-    document.getElementById('results').innerHTML = htmlString;
+    return masterArray;
 }
 
 function distances(building1, building2) { 
@@ -121,4 +84,9 @@ function distances(building1, building2) {
     return dataByBuilding.distances[building2];
 }
 
-sortByDays(aisisDetailsAsObjects);
+function updateResult(array) { 
+
+}
+
+var aisisArray = sortByDays(aisisDetailsAsObjects);
+updateResult(aisisArray);
