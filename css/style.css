@@ -13,20 +13,23 @@ body {
 .main {
   display: flex;
   flex-direction: row;
-  width: 90%;
+  /* width: 90%; */
   max-width: 1200px;
   height: 80vh;
-  margin: 5vh auto;
-  justify-content: space-between;
+  /* margin: 5vh auto; */
+  padding: 5vh auto;
+  justify-content: space-around;
 }
 
 .input-results {
   width: 40%;
   height: 100%;
   /* max-width: 320px; */
-  margin-right: 5%;
+  /* margin-right: 5%; */
   background: #F3F3F3;
   border-radius: 16px;
+
+  margin: 24px;
 
   display: inline-block;
 }
@@ -121,9 +124,9 @@ http://www.css3.info/preview/box-shadow/ */
   padding: 8px 16px;
   background: #fff;
   border-radius: 16px;
-  height: 25vh;
+  /* height: 25vh; */
 
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .results-content {
