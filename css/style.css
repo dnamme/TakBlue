@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: row;
   /* width: 90%; */
-  max-width: 1200px;
+  /* max-width: 1200px; */
   height: 80vh;
   /* margin: 5vh auto; */
   padding: 5vh auto;
@@ -118,67 +118,6 @@ http://www.css3.info/preview/box-shadow/ */
   overflow-x: hidden;
   font-size: 12px;
   color: #353535;
-}
-
-.results-container {
-  margin: 24px;
-  padding: 8px 16px;
-  background: #fff;
-  border-radius: 16px;
-  /* height: 25vh; */
-
-  /* display: inline-block; */
-}
-
-.results-content {
-  height: 80%;
-  padding: 5% 0;
-}
-
-.result-details {
-  margin: 0 auto 24px auto;
-  /* max-width: 200px; */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.circle {
-  background: #1C38B4;
-  width: 16px;
-  height: 16px;
-  border-radius: 8px;
-}
-
-.leftofline{
-  width: 50%;
-  padding: 3% 1% 1% 5%;
-  margin-right: 0px;
-  overflow: hidden;
-}
-
-.middle {
-  width: 100%;
-  overflow: hidden;
-  justify-content: space-between;
-  padding: 1% 56.5% 0% 0%;
-  display: flex;
-}
-
-.leftofline p{
-  font-size: 10px;
-}
-
-.vertical-line {
-  border-left: 2px solid #575757;
-  height: 50px;
-}
-
-.top-bottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .small-grey-text {
