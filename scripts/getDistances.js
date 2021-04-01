@@ -116,8 +116,12 @@ function sortByDays(array) {
 
 function distances(building1, building2) { 
     var distanceData = JSON.parse(data);
-    var dataByBuilding = distanceData.filter((element) => element.building === building1);
-    return dataByBuilding.distances[building2];
+
+    var firstBuildingCode = buildingToCode[buildingToCode.filter((building) => building.startsWith(building1))];
+    var secondBuildingCode = buildingToCode[buildingToCode.filter((building) => building.startsWith(building2))];
+
+    var dataByBuilding = distanceData.filter((element) => element.building === firstBuildingCode);
+    return dataByBuilding.distances[secondBuildingCode];
 }
 
 sortByDays(aisisDetailsAsObjects);
