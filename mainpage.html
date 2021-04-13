@@ -22,21 +22,14 @@
       </div>
     </nav>
 
-
-
-
     <div class="main">
         <div class="input-results">
           <div class="tab">
             <button class="tablinks active" onclick="openMethod(event, 'copy-input')">Copy-Paste</button>
-            <button class="tablinks" onclick="openMethod(event, 'manual-input')">Manual</button>
           </div>
           <div class="input-container">
             <div class="tabcontent" id="copy-input">
-              <textarea id="input-copy" rows="5" cols="20"></textarea>
-            </div>
-            <div class="tabcontent" id="manual-input">
-              <p>Type your schedule in the following format: <b>DAY || TIME || CLASS CODE || CLASS LOCATION</b></p>
+              <textarea id="input-copy" rows="5" cols="20" oninput="updateResults();"></textarea>
             </div>
           </div>
         </div><div class="results-container">
