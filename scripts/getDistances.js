@@ -8,7 +8,7 @@ var aisisDetailsFromRows = [];
 var aisisDetailsAsObjects = [];
 
 function fetchCopyData() { 
-    aisisData = document.getElementById('copy-input').nodeValue;
+    aisisData = document.getElementById('input-copy').value;
     aisisRows = aisisData.split(/\n/g);
 
     for (var i = 0; i < aisisRows.length; i++) { 
@@ -111,7 +111,7 @@ function sortByDays(array) {
             `;
         }
     }
-    document.getElementById('results').innerHTML = htmlString;
+    // document.getElementById('results').innerHTML = htmlString;
 }
 
 function distances(building1, building2) { 
@@ -122,6 +122,11 @@ function distances(building1, building2) {
 
     var dataByBuilding = distanceData.filter((element) => element.building === firstBuildingCode);
     return dataByBuilding.distances[secondBuildingCode];
+}
+
+function updateResults() {
+    fetchCopyData();
+    sortByDays(aisisDetailsAsObjects);
 }
 
 sortByDays(aisisDetailsAsObjects);
