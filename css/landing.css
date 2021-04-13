@@ -58,6 +58,14 @@ button#continue {
     font-weight: bold;
 }
 
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:85%;
+    height:60px;
+  }
+
 @media screen and (max-width: 800px) {
     #title {
         font-size: 72px;
