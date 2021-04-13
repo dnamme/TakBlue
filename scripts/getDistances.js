@@ -277,9 +277,11 @@ function sortByDays(array, selDay) {
                 <p class="result-text-location">${item.location}</p>`;
             }
             
-            detailsMid += `<div class="circle"></div>`;
-            detailsRight += `<p class="result-text-code">${arrayByDay[arrayByDay.length - 1].subjectCode}</p>
-            <p class="result-text-location">${arrayByDay[arrayByDay.length - 1].location}</p>`;
+            if(arrayByDay.length > 1) {
+                detailsMid += `<div class="circle"></div>`;
+                detailsRight += `<p class="result-text-code">${arrayByDay[arrayByDay.length - 1].subjectCode}</p>
+                <p class="result-text-location">${arrayByDay[arrayByDay.length - 1].location}</p>`;
+            }
 
             document.getElementById("results-details-left").innerHTML = detailsLeft;
             document.getElementById("results-details-mid").innerHTML = detailsMid;
