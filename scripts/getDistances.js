@@ -344,7 +344,7 @@ function distancesBetween(building1, building2) {
     //console.log(dataByBuilding);
     var toReturn = 0;
     try { 
-        toReturn = dataByBuilding[0]['distances'][secondBuildingCode];
+        toReturn = typeof dataByBuilding[0]['distances'][secondBuildingCode] === 'undefined' ? 0 : dataByBuilding[0]['distances'][secondBuildingCode];
     } catch (err) { 
         console.log(err);
         toReturn = 0;
