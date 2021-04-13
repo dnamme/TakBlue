@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/results.css">
+
+    <script src="./scripts/main.js"></script>
+    <title>Takblue</title>
+  </head>
+
+  <body>
+    <nav class="sticky">
+      <div class="nav-content">
+        <p><b>TakBlue</b></p>
+        <div class="nav-right">
+          <p><span onclick="transitionToPage('about.html')"></span></p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main">
+        <div class="input-results">
+          <div class="tab">
+            <button class="tablinks active" onclick="openMethod(event, 'copy-input')">Copy-Paste</button>
+          </div>
+          <div class="input-container">
+            <div class="tabcontent" id="copy-input">
+              <textarea id="input-copy" rows="5" cols="20" oninput="updateResults();"></textarea>
+            </div>
+          </div>
+        </div><div class="results-container">
+          <div class="results-day-tabs">
+            <button class="daylinks active" onclick="updateResults(0)">Monday</button>
+            <button class="daylinks" onclick="updateResults(1)">Tuesday</button>
+            <button class="daylinks" onclick="updateResults(2)">Wednesday</button>
+            <button class="daylinks" onclick="updateResults(3)">Thursday</button>
+            <button class="daylinks" onclick="updateResults(4)">Friday</button>
+            <button class="daylinks" onclick="updateResults(5)">Saturday</button>
+          </div>
+
+          <div class="results-content" id="results-content">
+
+            <div class="results-details-left" id="results-details-left">
+            </div>
+
+            <div class="results-details-mid" id="results-details-mid">
+            </div>
+
+            <div class="results-details-right" id="results-details-right">
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  
+    <script type="text/javascript" src="./scripts/distances.json"></script>
+    <script type="text/javascript" src="./scripts/getDistances.js"></script>
+  </body>
+</html>
