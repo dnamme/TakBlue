@@ -76,3 +76,9 @@
 .result-text-margin-bot {
     margin-bottom: 30px;
 }
+
+.day-tabs {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}

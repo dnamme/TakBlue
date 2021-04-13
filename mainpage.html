@@ -41,43 +41,46 @@
           </div>
         </div><div class="results-container">
           <div class="results-day-tabs">
-            <p class="small-grey-text">Monday</p>
-            <p class="small-grey-text">Tuesday</p>
-            <p class="small-grey-text">Wednesday</p>
-            <p class="small-grey-text">Thursday</p>
-            <p class="small-grey-text">Friday</p>
-            <p class="small-grey-text">Saturday</p>
+            <button class="daylinks active" onclick="selectDay(event, 'monday')">Monday</button>
+            <button class="daylinks" onclick="selectDay(event, 'tuesday')">Tuesday</button>
+            <button class="daylinks" onclick="selectDay(event, 'tuesday')">Wednesday</button>
+            <button class="daylinks" onclick="selectDay(event, 'tuesday')">Thursday</button>
+            <button class="daylinks" onclick="selectDay(event, 'tuesday')">Friday</button>
+            <button class="daylinks" onclick="selectDay(event, 'tuesday')">Saturday</button>
           </div>
 
           <div class="results-content">
+            <div class="day-tab" id="monday">
+              <div class="results-details-left">
+                <p class="result-text-time">5 minute walk</p>
+                <p class="result-text-distance">0.98km</p>
 
-            <div class="results-details-left">
-              <p class="result-text-time">5 minute walk</p>
-              <p class="result-text-distance">0.98km</p>
+                <p class="result-text-time">5 minute walk</p>
+                <p class="result-text-distance">0.98km</p>
+              </div>
 
-              <p class="result-text-time">5 minute walk</p>
-              <p class="result-text-distance">0.98km</p>
+              <div class="results-details-mid">
+                <div class="circle"></div>
+                <div class="vertical-line"></div>
+                <div class="circle"></div>
+                <div class="vertical-line"></div>
+                <div class="circle"></div>
+              </div>
+
+              <div class="results-details-right">
+                <p class="result-text-code">Class Code</p>
+                <p class="result-text-location">Location</p>
+
+                <p class="result-text-code">Class Code</p>
+                <p class="result-text-location">Location</p>
+
+                <p class="result-text-code">Class Code</p>
+                <p class="result-text-location">Location</p>
+              </div>
             </div>
-
-            <div class="results-details-mid">
-              <div class="circle"></div>
-              <div class="vertical-line"></div>
-              <div class="circle"></div>
-              <div class="vertical-line"></div>
-              <div class="circle"></div>
+            <div class="day-tab" id="tuesday">
+              <p>peepee</p>
             </div>
-
-            <div class="results-details-right">
-              <p class="result-text-code">Class Code</p>
-              <p class="result-text-location">Location</p>
-
-              <p class="result-text-code">Class Code</p>
-              <p class="result-text-location">Location</p>
-
-              <p class="result-text-code">Class Code</p>
-              <p class="result-text-location">Location</p>
-            </div>
-
           </div>
 
         </div>
@@ -87,5 +90,6 @@
   
     <script type="text/javascript" src="./scripts/distances.json"></script>
     <script type="text/javascript" src="./scripts/getDistances.js"></script>
+    <script type="text/javascript" src="./scripts/selectDay.js"></script>
   </body>
 </html>

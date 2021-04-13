@@ -78,6 +78,17 @@ body {
   display: none;
 }
 
+#days {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: none;
+
+  background-color: transparent;
+
+  border: 0;
+}
+
 .tab {
   overflow: hidden;
   border: none;
