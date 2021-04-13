@@ -237,7 +237,7 @@ function fetchCopyData() {
             aisisDetailsAsObjects.push(aisisDetails);
         }
     } catch(err) { 
-        alert("Yo! Check your copy-paste input and check if it's properly copy-pasted from AISIS.");
+        //alert("Yo! Check your copy-paste input and check if it's properly copy-pasted from AISIS.");
     }
 }
 
@@ -329,9 +329,10 @@ function distancesBetween(building1, building2) {
     var secondBuildingAISISCode = "";
 
     for (var code in buildingToCode) { 
-        if (code.startsWith(building1)) { 
+        if (building1.startsWith(code)) { 
             firstBuildingAISISCode = code;
-        } else if (code.startsWith(building2)) { 
+        } 
+        if (building2.startsWith(code)) { 
             secondBuildingAISISCode = code;
         }
     }
@@ -340,7 +341,15 @@ function distancesBetween(building1, building2) {
     var secondBuildingCode = buildingToCode[secondBuildingAISISCode];
 
     var dataByBuilding = distanceData.filter((element) => element.building === firstBuildingCode);
-    return ((typeof secondBuildingCode === 'undefined') ? 0 : dataByBuilding.distances[secondBuildingCode]);
+    //console.log(dataByBuilding);
+    var toReturn = 0;
+    try { 
+        toReturn = dataByBuilding[0]['distances'][secondBuildingCode];
+    } catch (err) { 
+        console.log(err);
+        toReturn = 0;
+    }
+    return toReturn;
 }
 
 function updateResults() {
