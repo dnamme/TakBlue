@@ -11,6 +11,9 @@ function fetchCopyData() {
     aisisData = document.getElementById('input-copy').value;
     aisisRows = aisisData.split(/\n/g);
 
+    aisisDetailsFromRows = [];
+    aisisDetailsAsObjects = [];
+
     for (var i = 0; i < aisisRows.length; i++) { 
         var arrayFromRow = aisisRows[i].split(/\t{1,}/g);
         aisisDetailsFromRows.push(arrayFromRow);
@@ -111,7 +114,8 @@ function sortByDays(array) {
             `;
         }
     }
-    // document.getElementById('results').innerHTML = htmlString;
+
+    document.getElementById('results-container').innerHTML = htmlString;
 }
 
 function distances(building1, building2) { 
