@@ -237,42 +237,18 @@ function fetchCopyData() {
             aisisDetailsAsObjects.push(aisisDetails);
         }
     } catch(err) { 
-        alert("Yo! Check your copy-paste input and check if it's properly copy-pasted from AISIS.");
+        //alert("Yo! Check your copy-paste input and check if it's properly copy-pasted from AISIS.");
     }
 }
 
-function fetchManualData() { 
-    aisisData = document.getElementById('manual-input').nodeValue;
-    aisisRows = aisisData.split(/\n/g);
-
-    for (var i = 0; i < aisisRows.length; i++) { 
-        var arrayFromRow = aisisRows[i].split(" || ");
-        aisisDetailsFromRows.push(arrayFromRow);
-    }
-
-    try {
-        for (var j = 0; j < aisisDetailsFromRows.length; j++) { 
-            var aisisDetails = { 
-                subjectCode: aisisDetailsFromRows[j][2],
-                section: "",
-                subjectName: "",
-                days: aisisDetailsFromRows[j][0].split("-"),
-                time: aisisDetailsFromRows[j][1].split("-"),
-                location: aisisDetailsFromRows[j][3]
-            }
-            aisisDetailsAsObjects.push(aisisDetails);
-        }
-    } catch (err) { 
-        alert("Yo! Make sure your input properly followed the format above: DAYS || TIME || CLASS CODE || CLASS LOCATION");
-    }
-}
-
-function sortByDays(array) { 
+function sortByDays(array, selDay) { 
     const daysOfWeek = ["M", "T", "W", "TH", "F", "SAT"];
     var htmlString = "";
 
+    var arrayByDay = null;
+
     for (var day of daysOfWeek) { 
-        var arrayByDay = array.filter(function(element) { 
+        arrayByDay = array.filter(function(element) { 
             return element.days.includes(day);
         });
         arrayByDay.sort((subj1, subj2) => subj1.time[0] > subj2.time[0] ? 1 : -1);
@@ -280,46 +256,38 @@ function sortByDays(array) {
             arrayByDay[i]["distance"] = distancesBetween(arrayByDay[i].location, arrayByDay[i + 1].location);
         }
         arrayByDay.unshift(day);
-        console.log(arrayByDay);
 
-        htmlString += "<p class='small-grey-text'> " + day + " </p>";
+        if(arrayByDay[0] === daysOfWeek[selDay]) {
+            console.log(arrayByDay);
 
-        for (var i = 1; i < arrayByDay.length - 1; i++) {
-            var item = arrayByDay[i]
-            var succeedingSubject = arrayByDay[i + 1];
+            var detailsLeft = "";
+            var detailsMid = "";
+            var detailsRight = "";
 
-            htmlString += `
-            <div class="results-content">
+            for(var i = 1; i < arrayByDay.length - 1; i++) {
+                var item = arrayByDay[i];
 
-            <div class="result-details">
-                <div class="top-bottom">
-                <p>${item.time[0]}</p>
-                <div class="circle"></div>
-                <div class="location">
-                <p>${item.subjectCode}</p>
-                <p class="small-grey-text">${item.location}</p>
-                </div>
-            </div>
-                <div class="middle">
-                <div class="leftofline">
-                    <p style="color: #1C38B4">${item.distance / 90} minute walk</p>
-                    <p class="small-grey-text">${item.distance} m</p>
-                </div>
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="top-bottom">
-                <p>${succeedingSubject.time[0]}</p>
-                <div class="circle"></div>
-                <div class="location">
-                <p>${succeedingSubject.subjectCode}</p>
-                <p class="small-grey-text">${succeedingSubject.location}</p>
-                </div>
-                </div>
-            </div>
-            `;
+                detailsLeft += `<p class="result-text-time">${item.time[0]}</p>
+                <p class="result-text-distance">${item.distance / 90} minute walk</p>`;
+
+                detailsMid += `<div class="circle"></div>
+                <div class="vertical-line"></div>`;
+
+                detailsRight += `<p class="result-text-code">${item.subjectCode}</p>
+                <p class="result-text-location">${item.location}</p>`;
+            }
+            
+            detailsMid += `<div class="circle"></div>`;
+            detailsRight += `<p class="result-text-code">${arrayByDay[arrayByDay.length - 1].subjectCode}</p>
+            <p class="result-text-location">${arrayByDay[arrayByDay.length - 1].location}</p>`;
+
+            document.getElementById("results-details-left").innerHTML = detailsLeft;
+            document.getElementById("results-details-mid").innerHTML = detailsMid;
+            document.getElementById("results-details-right").innerHTML = detailsRight;
+
+            return;
         }
     }
-    // document.getElementById('results').innerHTML = htmlString;
 }
 
 function distancesBetween(building1, building2) { 
@@ -329,9 +297,10 @@ function distancesBetween(building1, building2) {
     var secondBuildingAISISCode = "";
 
     for (var code in buildingToCode) { 
-        if (code.startsWith(building1)) { 
+        if (building1.startsWith(code)) { 
             firstBuildingAISISCode = code;
-        } else if (code.startsWith(building2)) { 
+        } 
+        if (building2.startsWith(code)) { 
             secondBuildingAISISCode = code;
         }
     }
@@ -340,10 +309,20 @@ function distancesBetween(building1, building2) {
     var secondBuildingCode = buildingToCode[secondBuildingAISISCode];
 
     var dataByBuilding = distanceData.filter((element) => element.building === firstBuildingCode);
-    return ((typeof secondBuildingCode === 'undefined') ? 0 : dataByBuilding.distances[secondBuildingCode]);
+    //console.log(dataByBuilding);
+    var toReturn = 0;
+    try { 
+        toReturn = dataByBuilding[0]['distances'][secondBuildingCode];
+    } catch (err) { 
+        console.log(err);
+        toReturn = 0;
+    }
+    return toReturn;
 }
 
-function updateResults() {
+function updateResults(selDay = 0) {
+    // 1 mon
+    // 6 sat
     fetchCopyData();
-    sortByDays(aisisDetailsAsObjects);
+    sortByDays(aisisDetailsAsObjects, selDay);
 }
